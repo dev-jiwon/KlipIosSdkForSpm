@@ -5,11 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "KlipIosSdkForSpm",
+    platforms: [.iOS(.v12)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "KlipIosSdkForSpm",
-            targets: ["KlipIosSdkForSpm"]),
+            targets: ["KlipIosSdkForSpm", "KlipLib-simulator"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -20,5 +21,8 @@ let package = Package(
             name: "KlipIosSdkForSpmTests",
             dependencies: ["KlipIosSdkForSpm"]
         ),
+        .binaryTarget(
+            name: "KlipLib-simulator",
+            path: "Artifacts/KlipLib-simulator.xcframework")
     ]
 )
