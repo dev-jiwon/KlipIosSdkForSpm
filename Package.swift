@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "KlipIosSdkForSpm",
+    name: "KlipLib-simulator",
     platforms: [.iOS(.v12)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
